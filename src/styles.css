@@ -39,18 +39,40 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 50px 1fr; 
+}
 
-.three-column-grid {}
+.three-column-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
 
-.three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  grid-template-columns: 1fr 3fr 1fr; /* Middle box takes more space */
+}
 
-.five-column-grid {}
+.five-column-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
 
-.center-grid {}
+.center-grid {
+  display: grid;
+  place-items: center; 
+}
 
-.grid-in-grid-1 {}
+.grid-in-grid-1 .box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three columns within each box */
+  gap: 4px;
+}
 
-.grid-in-grid-2 {}
+.grid-in-grid-2 .box {
+  display: grid;
+  grid-template-rows: auto; /* Ensures each box behaves as a grid */
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 4px;
+  grid-template-columns: repeat(2, 1fr);
+}
 
 .grid-madness {}
